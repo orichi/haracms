@@ -1,0 +1,22 @@
+.navbar.navbar-inverse.navbar-fixed-top
+	.navbar-inner
+		.container
+			%a{ "data-toggle" => "collapse", "data-target" => ".nav-collapse",:class=>"btn btn-navbar"}
+				%span.icon-bar
+				%span.icon-bar
+				%span.icon-bar
+			%a{:href=>root_path, :class=>"brand"}
+				Example Site
+			.nav-collapse.collapse
+				%p.navbar-text.pull-right
+					= "login as #{@user}"
+					= link_to "Logout", session_logout_path
+				%ul.nav
+					%li{:class=> @current =='root' ? 'active' : ''}
+						= link_to "Home", admin_root_path
+					%li{:class=> @current =='product' ? 'active' : ''}
+						= link_to "Product", admin_products_path
+					%li{:class=> @current =='message' ? 'active' : ''}
+						= link_to "Message", admin_messages_path
+					%li{:class=> @current =='user' ? 'active' : ''}
+						= link_to "User", "#" #admin_messages_path

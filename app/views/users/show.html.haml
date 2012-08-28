@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Email:
+  = @user.email
+%p
+  %b Password:
+  = @user.password
+%p
+  %b Authorize token:
+  = @user.authorize_token
+%p
+  %b Token time:
+  = @user.token_time
+
+= link_to 'Edit', edit_user_path(@user)
+\|
+= link_to 'Back', users_path

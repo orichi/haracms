@@ -1,0 +1,27 @@
+!!! 5
+%html{:lang=>'en'}
+	%head
+		%meta{ "content"=>"width=device-width, initial-scale=1.0", "name"=>"viewport"}
+		%meta{"charset"=>"utf-8"}
+		%title 
+			= @title ? @title : "Example Site"
+		= stylesheet_link_tag    "application"
+		= javascript_include_tag "application"
+		= csrf_meta_tags
+		:css
+			body {
+				padding-top: 60px;
+				padding-bottom: 40px;
+			}
+		/ Le HTML5 shim, for IE6-8 support of HTML5 elements
+		/ [if lt IE 9]
+			%script{:src=>"http://html5shim.googlecode.com/svn/trunk/html5.js"}
+	%head
+		= render :partial=>'admin/shared/shared_head'
+		.container
+			-flash.each do |key ,value|
+				.key
+					=value
+			= yield
+			.row
+			%footer

@@ -1,0 +1,25 @@
+%h2
+	Welcome To Example Site.
+.row
+	.span6
+		.row-fuild
+			%h3="Products Recently"
+			- @products.each do	|product|
+				.row-fluid
+					.span6
+						=link_to product.title, admin_products_path(product)
+					.span6=product.created_at
+			- if @products.empty?
+				.row-fluid
+					Products Emptyl, Please Add!
+	.span6
+		.row-fuild
+			%h3="Messages Recently"
+			- @messages.each do	|message|
+				.row-fluid
+					.span6
+						=link_to message.title, admin_messages_path(message)
+					.span6=message.created_at
+			- if @messages.empty?
+				.row-fluid
+					Messages Emptyl, Please Add!

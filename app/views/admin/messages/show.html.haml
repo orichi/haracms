@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @message.title
+%p
+  %b Content:
+  = @message.content
+
+= link_to 'Edit', edit_admin_message_path(@message)
+\|
+= link_to 'Back', admin_messages_path

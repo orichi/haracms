@@ -1,1 +1,10 @@
 This is an example site with rails 3.2.8.
+
+#git repo init
+# 
+# touch README.md
+# git init
+# git add README.md
+# git commit -m "first commit"
+# git remote add origin https://github.com/orichi/haracms.git
+# git push -u origin master
